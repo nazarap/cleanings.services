@@ -200,7 +200,7 @@
       margin-top: 16px;
       border-radius: 14px;
       width: 80%;
-      height: fit-content;
+      height: auto;
     }
 
     .contact-info {
@@ -364,12 +364,12 @@
       }
 
       .hero-header {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
         line-height: 3rem;
       }
 
       .header-image {
-        padding: 10px 30px;
+        padding: 10px 40px;
       }
 
       .floating-images {
@@ -615,6 +615,10 @@
       yellow: 20,
     }
 
+    const roundToHalf = (number) => {
+      return Math.round(number * 2) / 2;
+    }
+
     const priceEl = document.getElementById("price").childNodes[1];
     const timeEl = document.getElementById("time").childNodes[0];
     const onDataChange = () => {
@@ -623,7 +627,7 @@
       const coefficient = hoursCoefficient[type];
       const zonePrice = zonePrices[zone];
 
-      const hours = ((rooms * roomMins + bathAndKitch * bathMins) * coefficient) / 60;
+      const hours = roundToHalf(((rooms * roomMins + bathAndKitch * bathMins) * coefficient) / 60);
       timeEl.innerText = hours;
       priceEl.innerText = hours * hourPrice + zonePrice;
     }
