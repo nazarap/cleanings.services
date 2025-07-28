@@ -9,128 +9,665 @@
   <meta name="keywords" content="cleaning services, home cleaning, office cleaning, professional cleaners">
   <meta name="author" content="Cleanings.Services">
   <meta name="robots" content="index, follow">
+  <link rel="icon" href="Icon.ico">
   <title>Professional Cleaning Services | Cleanings.Services</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
 
-  
   <style>
     html,
     body {
-      font-family: "Montserrat", sans-serif;
+      font-family: "Inter", sans-serif !important;
       font-optical-sizing: auto;
+      font-size: 24px;
 
       margin: 0;
-      background-color: #FBFAFF;
+      color: #292C60;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    button {
+      margin: 0;
+      font-family: "Inter", sans-serif !important;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
     }
 
     .hero {
-      background-image: url('./MainPicture.svg');
-
-      height: 90vh;
+      height: 100vh;
       background-position: right bottom;
       background-size: contain;
       background-repeat: no-repeat;
 
+      position: relative;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
-      padding-left: 100px;
+      align-items: center;
+      background-color: #FBFAFF;
+
+      margin-bottom: 32px;
+    }
+
+    .floating-images {
+      position: absolute;
+      width: 20%;
+      z-index: 100;
+    }
+
+    .floating-images-1 {
+      left: 5%;
+      bottom: 0;
+    }
+
+    .floating-images-2 {
+      right: 5%;
+      bottom: 15%;
     }
 
     .hero-header {
+      z-index: 250;
+      text-align: center;
       margin: 0;
-      font-size: 90px;
-      font-weight: 800;
-      color: #292C60;
+      font-size: 3.5rem;
+      font-weight: 500;
+      margin-bottom: 16px;
     }
 
-    .hero-header span {
+    .header-image {
+      z-index: 250;
+      background-image: url("./StartGroup.svg");
+      background-size: cover;
+      background-position: center;
+      padding: 35px 100px;
+    }
+
+    .hero-tagline {
+      z-index: 200;
       color: #3760FF;
+      font-weight: 500;
+      font-size: 0.8rem;
+      border: 1px solid #DBE3FF;
+      background: linear-gradient(180deg, #aebfff29 0%, #dbe3ff29 100%);
+      padding: 15px 55px;
+      border-radius: 62px;
+      margin-bottom: 16px;
     }
 
     .hero p {
-      font-size: 27px;
-      color: #292C60;
+      font-size: 1.16rem;
+      font-weight: 400;
+    }
+
+    .hero .info {
+      font-size: 0.66rem;
+      font-weight: 400;
+      margin: 0.5rem 0 1rem 0;
     }
 
     button {
-      font-size: 20px;
+      font-size: 0.8rem;
       font-weight: 600;
 
-      padding: 15px 25px;
-      border-radius: 34px;
+      padding: 15px 20px;
+      border-radius: 14px;
       cursor: pointer;
       transition: opacity 0.3s ease;
+      box-sizing: border-box;
+      border: 2px solid #292C60;
     }
 
     button:hover {
-      opacity: 0.8;
+      opacity: 0.9;
     }
 
     button.contained {
-      background-color: #3760FF;
+      background-color: #292C60;
       color: white;
-      border: none;
     }
 
     button.outlined {
       background-color: white;
-      color: #3760FF;
-      border: 2px solid #3760FF;
+      color: #292C60;
     }
 
-    .flex {
+    .action {
+      z-index: 250;
       display: flex;
-      gap: 10px;
+      flex-direction: column;
+      align-items: stretch;
+      margin-top: 32px;
+    }
+
+    .content {
+      display: flex;
       flex-direction: row;
+      padding: 36px 100px;
+      gap: 12px;
     }
 
-    .form {
-      justify-content: center;
+    .content.bgn-content {
+      background-color: #FBFAFF;
     }
 
-    .form-container {
-      padding-top: 15px;
-      border-radius: 20px;
+    .content .content-block {
+      flex: 1;
+    }
+
+    .booking-from {
+      height: 1800px;
+    }
+
+    .content .content-header {
+      font-weight: 600;
+      font-size: 1.66rem;
+    }
+
+    .about-us h6 {
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    .content .content-p,
+    .about-us p {
+      margin-top: 2.5rem;
+      font-weight: 400;
+      font-size: 0.8rem;
+      line-height: 1.5rem;
+    }
+
+    .content .content-p {
+      margin-top: 0.66rem;
+    }
+
+    .map-block {
+      margin-top: 16px;
+      border-radius: 14px;
+      width: 80%;
+      height: fit-content;
+    }
+
+    .contact-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+
+    .contact-info .contact-info-icon {
+      width: 2rem;
+    }
+
+    .contact-info .contact-info-data {
+      font-size: 0.66rem;
+    }
+
+    .contact-href {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .calculator {
+      box-shadow: 0px 0px 1px 0px #0000001A;
+      box-shadow: 0px 0px 5px 0px #0000001A;
       background-color: white;
-      width: 43%;
-      box-shadow: #292c602f 0px 5px 15px;
+      width: 100%;
+      border-radius: 14px;
+      width: 80%;
+      margin-top: 4rem;
+    }
+
+    .cal-summary {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      background: #292C60;
+      border-bottom-left-radius: 14px;
+      border-bottom-right-radius: 14px;
+      padding: 20px;
+      color: white;
+    }
+
+    .cal-summary-price {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .cal-content {
+      padding: 20px;
+    }
+
+    .cal-price {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    .cal-info {
+      font-size: 0.5rem;
+      font-weight: 400;
+    }
+
+    .cal-header {
+      font-size: 1.2rem;
+    }
+
+    .field {
+      margin-top: 1.3rem;
+    }
+
+    .field span {
+      font-size: 0.8rem;
+    }
+
+    .field-number,
+    .field-variants {
+      margin-top: 0.66rem;
+      display: flex;
+      background: #F9F9FF;
+      border-radius: 14px;
+    }
+
+    .field-number .number-value,
+    .field-number .number-action,
+    .field-variants .variant {
+      background: #F9F9FF;
+      border-radius: 14px;
+      flex: 1;
+      text-align: center;
+      padding: 20px 15px;
+      font-size: 0.66rem;
+      cursor: pointer;
+    }
+
+    .field-number .number-action:hover,
+    .field-variants .variant:hover {
+      background: #292c6020;
+    }
+
+    .field-number .number-action:active,
+    .field-variants .variant:active {
+      background: #292c6038;
+    }
+
+    .field-number .number-value {
+      font-weight: 600;
+    }
+
+    .field-number .number-value,
+    .field-variants .variant.selected {
+      background: #292C60;
+      color: white;
+      cursor: inherit;
+    }
+
+    .cal-price-note {
+      font-size: 0.5rem;
+      margin-top: 15px;
+      opacity: 0.8;
+      font-weight: 200;
+      text-align: end;
+    }
+  </style>
+  <style>
+    /* Large Monitors (24 inches and above, 1920px+) */
+    @media screen and (min-width: 1920px) {
+
+      html,
+      body {
+        font-size: 26px;
+      }
+    }
+
+    /* Standard Screens (13–24 inches, 1024px–1919px) */
+    @media screen and (min-width: 1024px) and (max-width: 1919px) {
+
+      html,
+      body {
+        font-size: 24px;
+      }
+    }
+
+    /* Tablets and Phones (below 1024px) */
+    @media screen and (max-width: 1023px) {
+
+      html,
+      body {
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      .hero-tagline {
+        padding: 10px 35px;
+      }
+
+      .hero {
+        height: 70vh;
+      }
+
+      .hero-header {
+        font-size: 2.5rem;
+        line-height: 3rem;
+      }
+
+      .header-image {
+        padding: 10px 30px;
+      }
+
+      .floating-images {
+        width: 25%;
+      }
+
+      .floating-images-1 {
+        left: 0;
+        bottom: 0;
+      }
+
+      .floating-images-2 {
+        right: 0;
+        bottom: 15%;
+      }
+
+      .hero .info {
+        font-size: 0.8rem;
+      }
+
+      .content .content-header {
+        line-height: 2rem;
+      }
+
+      .content {
+        flex-direction: column;
+        padding: 15px 30px;
+      }
+
+      .map-block {
+        width: 100%;
+      }
+
+      .calculator {
+        width: 100%;
+        margin-top: 16px;
+      }
+
+      .booking-from {
+        height: 2000px;
+        margin-left: -30px;
+        width: calc(100% + 60px);
+      }
+
+      .contact-info {
+        margin-bottom: 8px;
+      }
+
+      .contact-info .contact-info-data {
+        font-size: 0.8rem;
+      }
+
+      .field-number .number-value,
+      .field-number .number-action,
+      .field-variants .variant {
+        padding: 15px 10px;
+        font-size: 0.8rem;
+      }
+
+      .cal-price-note {
+        font-size: 0.6rem;
+        line-height: 14px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- <header>
-    <h1>Welcome to Cleanings.Services</h1>
-  </header> -->
   <main>
     <div class="hero">
-      <h1 class="hero-header"><span>Clean</span> <br> with open <br> heart 💙</h1>
+      <div class="hero-tagline">Cleaning service in Toronto</div>
+      <div class="header-image">
+        <h1 class="hero-header">We clean with care <br>like its our own </h1>
+      </div>
 
-      <p>Regular Cleaning for Homes & Offices <br> in <b>Toronto</b> </p>
+      <img class="floating-images floating-images-1" src="./Girl1.png" />
+      <img class="floating-images floating-images-2" src="./Girl2.png" />
 
-      <div class="flex">
-        <button class="contained">Book Online</button>
-        <button class="outlined">Calculate Price</button>
+      <p>Kind hands. Open hearts</p>
+
+      <div class="action">
+        <button id="go-to-booking" class="contained">Book Cleaning Online</button>
+        <span class="info">*It takes only 1 minute</span>
+        <button id="go-to-calculator" class="outlined">Calculate Price</button>
       </div>
     </div>
 
-    <div class="form flex">
-      <div class="form-container">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSestrP5vDVBtpIGiHZhnQ_gQpQ9lY-NWbRHDP00dG2I-5qShA/viewform?embedded=true"
-          width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Uploading...</iframe>
+    <div class="content about-us">
+      <div class="content-block">
+        <h1 class="content-header">Our Story</h1>
+      </div>
+      <div class="content-block">
+        <h6>
+          I'm Ruslana — just a woman who started cleaning with heart and care, treating every home like my own.
+        </h6>
+        <p>
+          Soon, I found others who felt the same, and together we built a small, honest team that loves what we do.
+          <br>
+          We don’t just clean — we care. This is more than a service. It’s our way of bringing comfort and kindness into
+          your home.
+        </p>
+      </div>
+    </div>
+
+    <div class="content bgn-content">
+      <div class="content-block">
+        <h1 class="content-header">Make Your Cleanings Work for You</h1>
+        <p class="content-p">Soon, I found others who felt the same, and together we built a small, honest team that
+          loves what we do.</p>
+      </div>
+
+      <div class="content-block">
+      </div>
+    </div>
+
+    <div class="content book">
+      <div class="content-block">
+        <h1 class="content-header">We work on this areas</h1>
+        <p class="content-p">Regular Cleaning for Homes & Offices in Toronto </p>
+
+        <a href="https://www.google.com/maps/d/u/1/edit?mid=1_lpo-lTnNg9lF16_S51S1Gv7vrmyiYQ&usp=sharing"
+          target="_blank">
+          <img class="map-block service-area" src="./ServiceArea.png" />
+        </a>
+
+        <div id="calculator" class="calculator">
+          <div class="cal-content">
+            <h2 class="cal-header">Calculate your cleaning price</h2>
+
+            <div class="field">
+              <span>Type of Cleaning</span>
+              <div id="field-type" class="field-variants">
+                <div data-value="regular" class="variant selected">Regular</div>
+                <div data-value="complex" class="variant">Complex</div>
+                <div data-value="office" class="variant">Office</div>
+              </div>
+            </div>
+
+            <div class="field">
+              <span>Number of Rooms</span>
+              <div id="field-rooms" class="field-number">
+                <div data-field="min" class="number-action">-</div>
+                <div data-field="value" class="number-value">2</div>
+                <div data-field="plus" class="number-action">+</div>
+              </div>
+            </div>
+
+            <div class="field">
+              <span>Number of Bathrooms & Kitchens</span>
+              <div id="field-bath-kitch" class="field-number">
+                <div data-field="min" class="number-action">-</div>
+                <div data-field="value" class="number-value">2</div>
+                <div data-field="plus" class="number-action">+</div>
+              </div>
+            </div>
+
+            <div class="field">
+              <span>Location of the Property</span>
+              <div id="field-zone" class="field-variants">
+                <div data-value="green" class="variant selected">Green Zone</div>
+                <div data-value="yellow" class="variant">Yellow Zone</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cal-summary">
+            <div style="display: flex; flex-direction: row;">
+              <div class="cal-summary-price">
+                <p class="cal-info">Estimated cleaning time:</p>
+                <h1 id="time" class="cal-price"><span>3</span> hours</h1>
+              </div>
+              <div class="cal-summary-price">
+                <p class="cal-info">Your cleaning price:</p>
+                <h1 id="price" class="cal-price">$ <span>120</span></h1>
+              </div>
+            </div>
+            <span class="cal-price-note">Note on Pricing: The provided price is not final and may vary depending on the
+              specific requirements,
+              location, and scope of the cleaning service.</span>
+          </div>
+        </div>
+
+      </div>
+      <div id="booking" class="content-block">
+        <iframe class="booking-from"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSd_GSZD29HFv0PWMv97AM5zCR0m3mL-apAPFDqr5xDL4UZ8cA/viewform?embedded=true"
+          width="100%" height="1800" frameborder="0" marginheight="0" marginwidth="0">Uploading</iframe>
+      </div>
+    </div>
+
+    <div class="content bgn-content">
+      <div class="content-block">
+        <h1 class="content-header">Contact us</h1>
+      </div>
+      <div class="content-block ">
+        <div class="contact-info">
+          <img class="contact-info-icon" src="./PhoneIcon.svg" />
+          <h3 class="contact-info-data"><a class="contact-href" href="tel:+16476213492">+1 647 621 34 92</a></h3>
+        </div>
+        <div class="contact-info">
+          <img class="contact-info-icon" src="./EmailIcon.svg" />
+          <h3 class="contact-info-data"><a class="contact-href"
+              href="mailto:cleanings.services.toronto@gmail.com">cleanings.services.toronto@gmail.com</a></h3>
+        </div>
       </div>
     </div>
   </main>
-  <footer>
-    <p>&copy; 2023 Cleanings.Services. All rights reserved.</p>
-  </footer>
+
+  <script>
+    const scrollTo = (id) => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        console.error(`Element with ID ${id} not found`);
+      }
+    }
+    document.getElementById("go-to-booking").onclick = () => scrollTo("booking");
+    document.getElementById("go-to-calculator").onclick = () => scrollTo("calculator");
+  </script>
+
+  <script>
+    const values = {
+      type: "regular",
+      rooms: 2,
+      bathAndKitch: 2,
+      zone: "green"
+    };
+
+    const selectedClassName = "selected";
+    const hourPrice = 26;
+    const greenZonePrice = 10;
+    const yellowZonePrice = 20;
+    const roomMins = 30;
+    const bathMins = 45;
+    const hoursCoefficient = {
+      regular: 1,
+      complex: 2,
+      office: 1,
+    }
+    const zonePrices = {
+      green: 10,
+      yellow: 20,
+    }
+
+    const priceEl = document.getElementById("price").childNodes[1];
+    const timeEl = document.getElementById("time").childNodes[0];
+    const onDataChange = () => {
+      const { type, rooms, bathAndKitch, zone } = values;
+
+      const coefficient = hoursCoefficient[type];
+      const zonePrice = zonePrices[zone];
+
+      const hours = ((rooms * roomMins + bathAndKitch * bathMins) * coefficient) / 60;
+      timeEl.innerText = hours;
+      priceEl.innerText = hours * hourPrice + zonePrice;
+    }
+
+    const onSelectionChange = (fieldName, e) => {
+      const selectedEl = e.target;
+      values[fieldName] = selectedEl.dataset.value;
+
+      selectedEl.parentNode.getElementsByClassName(selectedClassName)[0].classList.remove(selectedClassName);
+      selectedEl.classList.add(selectedClassName);
+
+      onDataChange();
+    }
+
+    const onCounterChange = (fieldName, e) => {
+      const selectedEl = e.target;
+      const fieldType = selectedEl.dataset.field;
+
+      if (!["min", "plus"].includes(fieldType)) {
+        return;
+      }
+
+      if (fieldType === "min" && values[fieldName] > 1) {
+        values[fieldName] = values[fieldName] - 1;
+      }
+
+      if (fieldType === "plus" && values[fieldName] < 20) {
+        values[fieldName] = values[fieldName] + 1;
+      }
+
+      const valueEl = selectedEl.parentNode.querySelectorAll('[data-field="value"]')[0];
+      valueEl.innerText = values[fieldName];
+
+      onDataChange();
+    }
+
+    document.getElementById("field-type").onclick = (e) => onSelectionChange("type", e);
+    document.getElementById("field-zone").onclick = (e) => onSelectionChange("zone", e);
+
+    document.getElementById("field-rooms").onclick = (e) => onCounterChange("rooms", e);
+    document.getElementById("field-bath-kitch").onclick = (e) => onCounterChange("bathAndKitch", e);
+
+    onDataChange();
+  </script>
 </body>
 
 </html>
